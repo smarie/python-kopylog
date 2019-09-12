@@ -5,6 +5,31 @@
 from kopylog import Kompanion, PhaseInfo
 
 
+def test_main():
+    """"""
+
+    def main(foo):
+        pi = Kompanion()
+
+        with pi.add_new_phase('first') as phase:
+            phase.useless1 = 'hello'
+            print("Hello !")
+            bar = foo + 1
+
+        with pi.add_new_phase('second') as phase:
+            phase.useless2 = 2
+            print("World !")
+            result = foo - bar
+
+        return result, pi
+
+    # now execute
+    result, pi = main(10)
+
+    # TODO
+    # - assert that stdout worked correctly
+
+
 def test_processing_information():
     """ """
 
